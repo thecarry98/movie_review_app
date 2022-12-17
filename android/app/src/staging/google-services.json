@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "974606881937",
+    "project_id": "base-bloc-flutter-3-staging",
+    "storage_bucket": "base-bloc-flutter-3-staging.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:974606881937:android:712f3686228bf040085b30",
+        "android_client_info": {
+          "package_name": "com.aicycle.collectionApp.staging"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "974606881937-rpdrsokabun1vu3pu8c2rhimqf8kq80j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2HrAPUAsjIIE1e-Y54xxdyeBdK-aVIqE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "974606881937-rpdrsokabun1vu3pu8c2rhimqf8kq80j.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "974606881937-oarvd7jbqibgkl2okr048u26ko872e2e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.baseBloc3.staging"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

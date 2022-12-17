@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "493067143967",
+    "project_id": "base-bloc-flutter-3-production",
+    "storage_bucket": "base-bloc-flutter-3-production.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:493067143967:android:2818b7f1f19f0c02043e2a",
+        "android_client_info": {
+          "package_name": "com.aicycle.collectionApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "493067143967-v0jvm1tngv2651k4653oa66hldvj48t7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdAeQGegWdGGJqQHokcPHmeaiJ05O154w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "493067143967-v0jvm1tngv2651k4653oa66hldvj48t7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

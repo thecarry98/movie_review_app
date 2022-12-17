@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "442845986632",
+    "project_id": "base-bloc-flutter-3-dev",
+    "storage_bucket": "base-bloc-flutter-3-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:442845986632:android:d370dc8f408d17a957bd7d",
+        "android_client_info": {
+          "package_name": "com.aicycle.collectionApp.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "442845986632-qhvk8aq1f6ia78frhkja8463dnmhsnl7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJLXfEp6ifpX8Vkz3OpHTTwgYuznBWVRw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "442845986632-qhvk8aq1f6ia78frhkja8463dnmhsnl7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "442845986632-b2g9qgugonj2fvv456c999dd4oh2errt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.baseBloc3.dev"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,11 @@
+{
+  "login_error": "Login Fail",
+  "complete_log_out" : "Logged out successfully",
+  "dio_cancel_request": "Request was cancelled",
+  "dio_connect_timeout": "Connection timeout",
+  "dio_cancel_other": "Connection failed due to internet connection",
+  "dio_receive_timeout": "Receive timeout in connection",
+  "dio_send_timeout": "Connection failed due to internet connection",
+  "no_data": "Empty data"
+
+}
