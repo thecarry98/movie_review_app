@@ -100,4 +100,7 @@ class AppColors {
   static const Color danger = Color(0xFFBD4242);
   static const Color backgroundDialog = Color(0xFFF2F2F2);
   static const Color dialogDivider = Color(0xFF3C3C43);
+
+  //Movie App
+  static const Color color47cfff = Color(0xff47cfff);
 }

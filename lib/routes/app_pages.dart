@@ -9,7 +9,7 @@ part 'app_pages.gr.dart';
 
 @singleton
 @MaterialAutoRouter(routes: [
-  AutoRoute(path: AppRoutes.initial, page: CorePage, initial: true),
+  AutoRoute(path: AppRoutes.core, page: CorePage, initial: true),
   // AutoRoute(path: AppRoutes.camera, page: CameraPage),
   // AutoRoute(path: AppRoutes.login, page: LoginPage),
   // AutoRoute(path: AppRoutes.home, page: HomePage),

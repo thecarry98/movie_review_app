@@ -1,3 +1,3 @@
 class AppRoutes {
-  static const String initial = '/core';
+  static const String core = '/core';
 }

@@ -30,11 +30,49 @@ class $AssetsEnvGen {
 class $AssetsSvgGen {
   const $AssetsSvgGen();
 
+  /// File path: assets/svg/alarm-active.svg
+  SvgGenImage get alarmActive =>
+      const SvgGenImage('assets/svg/alarm-active.svg');
+
+  /// File path: assets/svg/alarm.svg
+  SvgGenImage get alarm => const SvgGenImage('assets/svg/alarm.svg');
+
+  /// File path: assets/svg/event-ticket-active.svg
+  SvgGenImage get eventTicketActive =>
+      const SvgGenImage('assets/svg/event-ticket-active.svg');
+
+  /// File path: assets/svg/event-ticket.svg
+  SvgGenImage get eventTicket =>
+      const SvgGenImage('assets/svg/event-ticket.svg');
+
+  /// File path: assets/svg/movie-reel-active.svg
+  SvgGenImage get movieReelActive =>
+      const SvgGenImage('assets/svg/movie-reel-active.svg');
+
+  /// File path: assets/svg/movie-reel.svg
+  SvgGenImage get movieReel => const SvgGenImage('assets/svg/movie-reel.svg');
+
+  /// File path: assets/svg/user-active.svg
+  SvgGenImage get userActive => const SvgGenImage('assets/svg/user-active.svg');
+
+  /// File path: assets/svg/user.svg
+  SvgGenImage get user => const SvgGenImage('assets/svg/user.svg');
+
   /// File path: assets/svg/zoom.svg
   SvgGenImage get zoom => const SvgGenImage('assets/svg/zoom.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [zoom];
+  List<SvgGenImage> get values => [
+        alarmActive,
+        alarm,
+        eventTicketActive,
+        eventTicket,
+        movieReelActive,
+        movieReel,
+        userActive,
+        user,
+        zoom
+      ];
 }
 
 class $AssetsTranslationsGen {
