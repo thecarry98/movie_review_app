@@ -10,13 +10,21 @@ import 'package:event_bus/event_bus.dart' as _i6;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import '../common/local_data/shared_pref.dart' as _i8;
-import '../common/logger/logger.dart' as _i9;
-import '../common/notification/local_notification_helper.dart' as _i7;
-import '../common/utils/snack_bar/snack_bar_helper.dart' as _i10;
+import '../common/local_data/shared_pref.dart' as _i11;
+import '../common/logger/logger.dart' as _i12;
+import '../common/notification/local_notification_helper.dart' as _i10;
+import '../common/utils/snack_bar/snack_bar_helper.dart' as _i13;
 import '../features/core/presentation/bloc/core_bloc.dart' as _i4;
+import '../features/home/data/remote/service/home_service.dart' as _i7;
+import '../features/home/data/remote/source/home_source.dart' as _i8;
+import '../features/home/data/remote/source/home_source_impl.dart' as _i9;
+import '../features/home/data/repository/home_repo_impl.dart' as _i15;
+import '../features/home/domain/repository/home_repo.dart' as _i14;
+import '../features/home/domain/use_case/home_use_case.dart' as _i16;
+import '../features/home/domain/use_case/home_use_case_impl.dart' as _i17;
+import '../features/home/presentation/bloc/home_bloc.dart' as _i18;
 import '../routes/app_pages.dart' as _i3;
-import 'app_module.dart' as _i11; // ignore_for_file: unnecessary_lambdas
+import 'app_module.dart' as _i19; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -35,11 +43,17 @@ _i1.GetIt $initGetIt(
   gh.factory<_i4.CoreBloc>(() => _i4.CoreBloc());
   gh.singleton<_i5.Dio>(appModule.dio);
   gh.singleton<_i6.EventBus>(appModule.eventBus);
-  gh.singleton<_i7.LocalNotificationHelper>(_i7.LocalNotificationHelper());
-  gh.factory<_i8.LocalStorage>(() => _i8.LocalStorageImpl());
-  gh.singleton<_i9.LogUtils>(_i9.LogUtils());
-  gh.singleton<_i10.SnackBarHelper>(_i10.SnackBarHelper());
+  gh.factory<_i7.HomeService>(() => _i7.HomeService(get<_i5.Dio>()));
+  gh.factory<_i8.HomeSource>(() => _i9.HomeSourceImpl(get<_i7.HomeService>()));
+  gh.singleton<_i10.LocalNotificationHelper>(_i10.LocalNotificationHelper());
+  gh.factory<_i11.LocalStorage>(() => _i11.LocalStorageImpl());
+  gh.singleton<_i12.LogUtils>(_i12.LogUtils());
+  gh.singleton<_i13.SnackBarHelper>(_i13.SnackBarHelper());
+  gh.factory<_i14.HomeRepo>(() => _i15.HomeRepoImpl(get<_i8.HomeSource>()));
+  gh.factory<_i16.HomeUseCase>(
+      () => _i17.HomeUseCaseImpl(get<_i14.HomeRepo>()));
+  gh.factory<_i18.HomeBloc>(() => _i18.HomeBloc(get<_i16.HomeUseCase>()));
   return get;
 }
 
-class _$AppModule extends _i11.AppModule {}
+class _$AppModule extends _i19.AppModule {}

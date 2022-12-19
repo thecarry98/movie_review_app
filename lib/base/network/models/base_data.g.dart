@@ -15,6 +15,7 @@ BaseListData<T> _$BaseListDataFromJson<T>(
       status: json['status'] as String?,
       result: (json['result'] as List<dynamic>?)?.map(fromJsonT).toList(),
     )
+      ..items = (json['items'] as List<dynamic>?)?.map(fromJsonT).toList()
       ..message = json['message'] as String?
       ..msg = json['msg'] as String?
       ..name = json['name'] as String?
@@ -27,6 +28,7 @@ Map<String, dynamic> _$BaseListDataToJson<T>(
 ) =>
     <String, dynamic>{
       'data': instance.data?.map(toJsonT).toList(),
+      'items': instance.items?.map(toJsonT).toList(),
       'result': instance.result?.map(toJsonT).toList(),
       'status': instance.status,
       'message': instance.message,

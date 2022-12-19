@@ -20,7 +20,10 @@ class CoreBloc extends BaseBloc<CoreEvent, CoreState> {
     });
   }
 
-  _onInit(Emitter<CoreState> emit) {}
+  _onInit(Emitter<CoreState> emit) {
+    emit(state.copyWith(index: 0));
+  }
+
   _onChangeIndex(int index, Emitter<CoreState> emit) {
     emit(state.copyWith(index: index));
   }

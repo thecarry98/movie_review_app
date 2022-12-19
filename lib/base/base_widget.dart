@@ -163,7 +163,7 @@ mixin BaseMethodMixin<S extends BaseBlocState> {
     if (state.status == BaseStateStatus.failed) {
       showMessage(context, state.message ?? "", type: SnackBarType.error);
     } else if (state.status == BaseStateStatus.success) {
-      showMessage(context, state.message ?? "", type: SnackBarType.success);
+      // showMessage(context, state.message ?? "", type: SnackBarType.success);
     }
   }
 }

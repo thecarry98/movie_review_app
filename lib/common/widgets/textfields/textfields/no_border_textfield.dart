@@ -29,6 +29,7 @@ class NoBorderTextField extends StatefulWidget {
   final int? maxLength;
   final Function()? onTap;
   final bool hasClearButton;
+  final bool? autofocus;
 
   const NoBorderTextField({
     Key? key,
@@ -55,6 +56,7 @@ class NoBorderTextField extends StatefulWidget {
     this.isShowPrefix,
     this.onSubmitted,
     this.expand,
+    this.autofocus,
   }) : super(key: key);
 
   @override
@@ -135,6 +137,7 @@ class _NoBorderTextFieldState extends State<NoBorderTextField> {
           child: Focus(
             onFocusChange: _setTextValue,
             child: TextField(
+              autofocus: widget.autofocus ?? false,
               focusNode:
                   widget.requestFocus == null ? widget.focusNode : _focusNode,
               keyboardType: widget.keyboardType,
