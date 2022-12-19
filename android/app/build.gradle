@@ -73,12 +73,12 @@ android {
     productFlavors {
         dev {
             dimension "app"
-            resValue "string","app_name","Movie Review Dev"
+            resValue "string","app_name","AiCycle Collection Dev"
             applicationId "com.aicycle.collectionApp.dev"
         }
         production {
             dimension "app"
-            resValue "string", "app_name", "Movie Review"
+            resValue "string", "app_name", "AiCycle Collection"
             applicationId "com.aicycle.collectionApp"      
         }
 

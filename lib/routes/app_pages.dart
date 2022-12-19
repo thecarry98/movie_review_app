@@ -1,9 +1,9 @@
-import 'package:movie_review_app/routes/app_routes.dart';
+import 'package:aicycle_collection_app/routes/app_routes.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:injectable/injectable.dart';
 
-import '../features/core/presentation/core_page.dart';
+import '../features/core_page.dart';
 
 part 'app_pages.gr.dart';
 

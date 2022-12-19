@@ -1,4 +1,4 @@
-import 'package:movie_review_app/base/network/errors/error.dart';
+import 'package:aicycle_collection_app/base/network/errors/error.dart';
 import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
 

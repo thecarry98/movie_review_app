@@ -1,5 +1,4 @@
 import 'dart:developer';
-import 'package:movie_review_app/di/di_setup.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -7,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'common/index.dart';
+import 'di/di_setup.dart';
 import 'gen/fonts.gen.dart';
 import 'routes/app_pages.dart';
 
@@ -31,7 +31,7 @@ Future<void> main() async {
     fileName: envConfig(flavor),
   );
   await EasyLocalization.ensureInitialized();
-  configureDependencies();
+  // configureDependencies();
   // await Firebase.initializeApp();
   // await getIt<PushNotificationHelper>().initialize();
   // await getIt<LocalNotificationHelper>().init();

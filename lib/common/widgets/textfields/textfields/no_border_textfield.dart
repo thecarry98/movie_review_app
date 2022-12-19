@@ -1,6 +1,6 @@
-import 'package:movie_review_app/common/app_theme/app_colors.dart';
-import 'package:movie_review_app/common/app_theme/app_styles.dart';
-import 'package:movie_review_app/gen/assets.gen.dart';
+import 'package:aicycle_collection_app/common/app_theme/app_colors.dart';
+import 'package:aicycle_collection_app/common/app_theme/app_styles.dart';
+import 'package:aicycle_collection_app/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

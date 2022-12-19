@@ -1,4 +1,4 @@
-import 'package:movie_review_app/common/app_theme/app_colors.dart';
+import 'package:aicycle_collection_app/common/app_theme/app_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

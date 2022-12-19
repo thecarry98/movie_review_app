@@ -1,4 +1,4 @@
-import 'package:movie_review_app/di/di_setup.dart';
+import 'package:aicycle_collection_app/di/di_setup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
