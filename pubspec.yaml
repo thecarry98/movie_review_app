@@ -1,4 +1,4 @@
-name: aicycle_collection_app
+name: movie_review_app
 description: A new base project using bloc, Clean Architecture on Flutter 3.
 
 publish_to: "none" # Remove this line if you wish to publish to pub.dev

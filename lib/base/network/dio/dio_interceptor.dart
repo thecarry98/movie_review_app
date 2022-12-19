@@ -1,4 +1,4 @@
-import 'package:aicycle_collection_app/common/local_data/pref_key.dart';
+import 'package:movie_review_app/common/local_data/pref_key.dart';
 import 'package:dio/dio.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

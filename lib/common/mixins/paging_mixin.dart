@@ -1,5 +1,5 @@
-import 'package:aicycle_collection_app/base/network/errors/error.dart';
-import 'package:aicycle_collection_app/base/network/errors/extension.dart';
+import 'package:movie_review_app/base/network/errors/error.dart';
+import 'package:movie_review_app/base/network/errors/extension.dart';
 import 'package:dartz/dartz.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 

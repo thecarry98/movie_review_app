@@ -1,5 +1,5 @@
-import 'package:aicycle_collection_app/common/app_theme/app_colors.dart';
-import 'package:aicycle_collection_app/common/app_theme/app_styles.dart';
+import 'package:movie_review_app/common/app_theme/app_colors.dart';
+import 'package:movie_review_app/common/app_theme/app_styles.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

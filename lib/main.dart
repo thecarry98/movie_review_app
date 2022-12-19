@@ -31,7 +31,7 @@ Future<void> main() async {
     fileName: envConfig(flavor),
   );
   await EasyLocalization.ensureInitialized();
-  // configureDependencies();
+  configureDependencies();
   // await Firebase.initializeApp();
   // await getIt<PushNotificationHelper>().initialize();
   // await getIt<LocalNotificationHelper>().init();

@@ -1,4 +1,4 @@
-import 'package:aicycle_collection_app/di/di_setup.dart';
+import 'package:movie_review_app/di/di_setup.dart';
 import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
 import '../constants/constants.dart';

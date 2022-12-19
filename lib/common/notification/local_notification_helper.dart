@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 
-import 'package:aicycle_collection_app/common/constants.dart';
+import 'package:movie_review_app/common/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:injectable/injectable.dart';
