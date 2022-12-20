@@ -22,7 +22,23 @@ class _$AppPages extends RootStackRouter {
         routeData: routeData,
         child: const CorePage(),
       );
-    }
+    },
+    HomePageRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const HomePage(),
+      );
+    },
+    MovieDetailAuthRoute.name: (routeData) {
+      final args = routeData.argsAs<MovieDetailAuthRouteArgs>();
+      return MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: MovieDetailAuth(
+          key: args.key,
+          id: args.id,
+        ),
+      );
+    },
   };
 
   @override
@@ -37,6 +53,14 @@ class _$AppPages extends RootStackRouter {
           CorePageRoute.name,
           path: '/core',
         ),
+        RouteConfig(
+          HomePageRoute.name,
+          path: '/home',
+        ),
+        RouteConfig(
+          MovieDetailAuthRoute.name,
+          path: '/movieDetail',
+        ),
       ];
 }
 
@@ -50,4 +74,50 @@ class CorePageRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'CorePageRoute';
+}
+
+/// generated route for
+/// [HomePage]
+class HomePageRoute extends PageRouteInfo<void> {
+  const HomePageRoute()
+      : super(
+          HomePageRoute.name,
+          path: '/home',
+        );
+
+  static const String name = 'HomePageRoute';
+}
+
+/// generated route for
+/// [MovieDetailAuth]
+class MovieDetailAuthRoute extends PageRouteInfo<MovieDetailAuthRouteArgs> {
+  MovieDetailAuthRoute({
+    Key? key,
+    required String id,
+  }) : super(
+          MovieDetailAuthRoute.name,
+          path: '/movieDetail',
+          args: MovieDetailAuthRouteArgs(
+            key: key,
+            id: id,
+          ),
+        );
+
+  static const String name = 'MovieDetailAuthRoute';
+}
+
+class MovieDetailAuthRouteArgs {
+  const MovieDetailAuthRouteArgs({
+    this.key,
+    required this.id,
+  });
+
+  final Key? key;
+
+  final String id;
+
+  @override
+  String toString() {
+    return 'MovieDetailAuthRouteArgs{key: $key, id: $id}';
+  }
 }

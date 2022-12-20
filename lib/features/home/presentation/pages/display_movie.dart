@@ -1,38 +1,36 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:movie_review_app/features/home/presentation/widgets/movie_card.dart';
-import '../../../../base/base_widget.dart';
-import '../bloc/home_bloc.dart';
+import 'package:movie_review_app/features/movie_detail/presentation/movie_detail_auth.dart';
+import 'package:movie_review_app/routes/app_pages.dart';
+import 'package:movie_review_app/routes/app_routes.dart';
+import '../../data/model/movie_model.dart';
 
 class DisPlayMovie extends StatefulWidget {
-  const DisPlayMovie({super.key, required this.index});
-  final int index;
+  DisPlayMovie({this.listMovie});
+  final List<MovieModel>? listMovie;
 
   @override
   State<DisPlayMovie> createState() => _DisPlayMovieState();
 }
 
-class _DisPlayMovieState
-    extends BaseShareState<DisPlayMovie, HomeEvent, HomeState, HomeBloc> {
+class _DisPlayMovieState extends State<DisPlayMovie> {
   @override
-  void initState() {
-    super.initState();
-    bloc.add(HomeEvent.init(widget.index));
-  }
-
-  @override
-  Widget renderUI(BuildContext context) {
+  Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(8.0.w),
-      child: blocBuilder(
-        (c, s) => AlignedGridView.count(
-          crossAxisCount: 2,
-          crossAxisSpacing: 5.w,
-          mainAxisSpacing: 20.h,
-          itemBuilder: (c, i) => MovieCard(movie: s.listMovie?[i]),
-          itemCount: 10,
-        ),
+      child: AlignedGridView.count(
+        crossAxisCount: 2,
+        crossAxisSpacing: 5.w,
+        mainAxisSpacing: 20.h,
+        itemBuilder: (c, i) => GestureDetector(
+            onTap: () => context.router.push(
+                  MovieDetailAuthRoute(id: widget.listMovie?[i].id ?? ''),
+                ),
+            child: MovieCard(movie: widget.listMovie?[i])),
+        itemCount: 10,
       ),
     );
   }

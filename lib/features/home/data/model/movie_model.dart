@@ -8,6 +8,7 @@ class MovieModel with _$MovieModel {
     String? id,
     String? rank,
     String? rankUpDown,
+    String? resultType,
     String? title,
     String? fullTitle,
     String? year,
@@ -15,6 +16,7 @@ class MovieModel with _$MovieModel {
     String? crew,
     String? imDbRating,
     String? imDbRatingCount,
+    String? description,
   }) = _MovieModel;
 
   factory MovieModel.fromJson(Map<String, dynamic> json) =>

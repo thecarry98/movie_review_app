@@ -23,6 +23,7 @@ mixin _$MovieModel {
   String? get id => throw _privateConstructorUsedError;
   String? get rank => throw _privateConstructorUsedError;
   String? get rankUpDown => throw _privateConstructorUsedError;
+  String? get resultType => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
   String? get fullTitle => throw _privateConstructorUsedError;
   String? get year => throw _privateConstructorUsedError;
@@ -30,6 +31,7 @@ mixin _$MovieModel {
   String? get crew => throw _privateConstructorUsedError;
   String? get imDbRating => throw _privateConstructorUsedError;
   String? get imDbRatingCount => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -47,13 +49,15 @@ abstract class $MovieModelCopyWith<$Res> {
       {String? id,
       String? rank,
       String? rankUpDown,
+      String? resultType,
       String? title,
       String? fullTitle,
       String? year,
       String? image,
       String? crew,
       String? imDbRating,
-      String? imDbRatingCount});
+      String? imDbRatingCount,
+      String? description});
 }
 
 /// @nodoc
@@ -72,6 +76,7 @@ class _$MovieModelCopyWithImpl<$Res, $Val extends MovieModel>
     Object? id = freezed,
     Object? rank = freezed,
     Object? rankUpDown = freezed,
+    Object? resultType = freezed,
     Object? title = freezed,
     Object? fullTitle = freezed,
     Object? year = freezed,
@@ -79,6 +84,7 @@ class _$MovieModelCopyWithImpl<$Res, $Val extends MovieModel>
     Object? crew = freezed,
     Object? imDbRating = freezed,
     Object? imDbRatingCount = freezed,
+    Object? description = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -92,6 +98,10 @@ class _$MovieModelCopyWithImpl<$Res, $Val extends MovieModel>
       rankUpDown: freezed == rankUpDown
           ? _value.rankUpDown
           : rankUpDown // ignore: cast_nullable_to_non_nullable
+              as String?,
+      resultType: freezed == resultType
+          ? _value.resultType
+          : resultType // ignore: cast_nullable_to_non_nullable
               as String?,
       title: freezed == title
           ? _value.title
@@ -120,6 +130,10 @@ class _$MovieModelCopyWithImpl<$Res, $Val extends MovieModel>
       imDbRatingCount: freezed == imDbRatingCount
           ? _value.imDbRatingCount
           : imDbRatingCount // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
   }
@@ -137,13 +151,15 @@ abstract class _$$_MovieModelCopyWith<$Res>
       {String? id,
       String? rank,
       String? rankUpDown,
+      String? resultType,
       String? title,
       String? fullTitle,
       String? year,
       String? image,
       String? crew,
       String? imDbRating,
-      String? imDbRatingCount});
+      String? imDbRatingCount,
+      String? description});
 }
 
 /// @nodoc
@@ -160,6 +176,7 @@ class __$$_MovieModelCopyWithImpl<$Res>
     Object? id = freezed,
     Object? rank = freezed,
     Object? rankUpDown = freezed,
+    Object? resultType = freezed,
     Object? title = freezed,
     Object? fullTitle = freezed,
     Object? year = freezed,
@@ -167,6 +184,7 @@ class __$$_MovieModelCopyWithImpl<$Res>
     Object? crew = freezed,
     Object? imDbRating = freezed,
     Object? imDbRatingCount = freezed,
+    Object? description = freezed,
   }) {
     return _then(_$_MovieModel(
       id: freezed == id
@@ -180,6 +198,10 @@ class __$$_MovieModelCopyWithImpl<$Res>
       rankUpDown: freezed == rankUpDown
           ? _value.rankUpDown
           : rankUpDown // ignore: cast_nullable_to_non_nullable
+              as String?,
+      resultType: freezed == resultType
+          ? _value.resultType
+          : resultType // ignore: cast_nullable_to_non_nullable
               as String?,
       title: freezed == title
           ? _value.title
@@ -209,6 +231,10 @@ class __$$_MovieModelCopyWithImpl<$Res>
           ? _value.imDbRatingCount
           : imDbRatingCount // ignore: cast_nullable_to_non_nullable
               as String?,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -220,13 +246,15 @@ class _$_MovieModel implements _MovieModel {
       {this.id,
       this.rank,
       this.rankUpDown,
+      this.resultType,
       this.title,
       this.fullTitle,
       this.year,
       this.image,
       this.crew,
       this.imDbRating,
-      this.imDbRatingCount});
+      this.imDbRatingCount,
+      this.description});
 
   factory _$_MovieModel.fromJson(Map<String, dynamic> json) =>
       _$$_MovieModelFromJson(json);
@@ -237,6 +265,8 @@ class _$_MovieModel implements _MovieModel {
   final String? rank;
   @override
   final String? rankUpDown;
+  @override
+  final String? resultType;
   @override
   final String? title;
   @override
@@ -251,10 +281,12 @@ class _$_MovieModel implements _MovieModel {
   final String? imDbRating;
   @override
   final String? imDbRatingCount;
+  @override
+  final String? description;
 
   @override
   String toString() {
-    return 'MovieModel(id: $id, rank: $rank, rankUpDown: $rankUpDown, title: $title, fullTitle: $fullTitle, year: $year, image: $image, crew: $crew, imDbRating: $imDbRating, imDbRatingCount: $imDbRatingCount)';
+    return 'MovieModel(id: $id, rank: $rank, rankUpDown: $rankUpDown, resultType: $resultType, title: $title, fullTitle: $fullTitle, year: $year, image: $image, crew: $crew, imDbRating: $imDbRating, imDbRatingCount: $imDbRatingCount, description: $description)';
   }
 
   @override
@@ -266,6 +298,8 @@ class _$_MovieModel implements _MovieModel {
             (identical(other.rank, rank) || other.rank == rank) &&
             (identical(other.rankUpDown, rankUpDown) ||
                 other.rankUpDown == rankUpDown) &&
+            (identical(other.resultType, resultType) ||
+                other.resultType == resultType) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.fullTitle, fullTitle) ||
                 other.fullTitle == fullTitle) &&
@@ -275,13 +309,27 @@ class _$_MovieModel implements _MovieModel {
             (identical(other.imDbRating, imDbRating) ||
                 other.imDbRating == imDbRating) &&
             (identical(other.imDbRatingCount, imDbRatingCount) ||
-                other.imDbRatingCount == imDbRatingCount));
+                other.imDbRatingCount == imDbRatingCount) &&
+            (identical(other.description, description) ||
+                other.description == description));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, rank, rankUpDown, title,
-      fullTitle, year, image, crew, imDbRating, imDbRatingCount);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      rank,
+      rankUpDown,
+      resultType,
+      title,
+      fullTitle,
+      year,
+      image,
+      crew,
+      imDbRating,
+      imDbRatingCount,
+      description);
 
   @JsonKey(ignore: true)
   @override
@@ -302,13 +350,15 @@ abstract class _MovieModel implements MovieModel {
       {final String? id,
       final String? rank,
       final String? rankUpDown,
+      final String? resultType,
       final String? title,
       final String? fullTitle,
       final String? year,
       final String? image,
       final String? crew,
       final String? imDbRating,
-      final String? imDbRatingCount}) = _$_MovieModel;
+      final String? imDbRatingCount,
+      final String? description}) = _$_MovieModel;
 
   factory _MovieModel.fromJson(Map<String, dynamic> json) =
       _$_MovieModel.fromJson;
@@ -319,6 +369,8 @@ abstract class _MovieModel implements MovieModel {
   String? get rank;
   @override
   String? get rankUpDown;
+  @override
+  String? get resultType;
   @override
   String? get title;
   @override
@@ -333,6 +385,8 @@ abstract class _MovieModel implements MovieModel {
   String? get imDbRating;
   @override
   String? get imDbRatingCount;
+  @override
+  String? get description;
   @override
   @JsonKey(ignore: true)
   _$$_MovieModelCopyWith<_$_MovieModel> get copyWith =>

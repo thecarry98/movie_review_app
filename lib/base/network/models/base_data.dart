@@ -25,6 +25,8 @@ class BaseListData<T> {
   List<T>? items;
   @JsonKey(name: 'result')
   List<T>? result;
+  @JsonKey(name: 'results')
+  List<T>? results;
   @JsonKey(name: 'status')
   String? status;
   @JsonKey(name: 'message')

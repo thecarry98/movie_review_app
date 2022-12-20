@@ -11,6 +11,7 @@ _$_MovieModel _$$_MovieModelFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String?,
       rank: json['rank'] as String?,
       rankUpDown: json['rankUpDown'] as String?,
+      resultType: json['resultType'] as String?,
       title: json['title'] as String?,
       fullTitle: json['fullTitle'] as String?,
       year: json['year'] as String?,
@@ -18,6 +19,7 @@ _$_MovieModel _$$_MovieModelFromJson(Map<String, dynamic> json) =>
       crew: json['crew'] as String?,
       imDbRating: json['imDbRating'] as String?,
       imDbRatingCount: json['imDbRatingCount'] as String?,
+      description: json['description'] as String?,
     );
 
 Map<String, dynamic> _$$_MovieModelToJson(_$_MovieModel instance) =>
@@ -25,6 +27,7 @@ Map<String, dynamic> _$$_MovieModelToJson(_$_MovieModel instance) =>
       'id': instance.id,
       'rank': instance.rank,
       'rankUpDown': instance.rankUpDown,
+      'resultType': instance.resultType,
       'title': instance.title,
       'fullTitle': instance.fullTitle,
       'year': instance.year,
@@ -32,4 +35,5 @@ Map<String, dynamic> _$$_MovieModelToJson(_$_MovieModel instance) =>
       'crew': instance.crew,
       'imDbRating': instance.imDbRating,
       'imDbRatingCount': instance.imDbRatingCount,
+      'description': instance.description,
     };

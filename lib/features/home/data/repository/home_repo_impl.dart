@@ -31,4 +31,15 @@ class HomeRepoImpl implements HomeRepo {
       return left(e.baseError);
     }
   }
+
+  @override
+  Future<Either<BaseError, List<MovieModel>>> getMovieResult(
+      {required String expression}) async {
+    try {
+      final res = await _source.getMovieResult(expression: expression);
+      return right(res.results!);
+    } on DioError catch (e) {
+      return left(e.baseError);
+    }
+  }
 }

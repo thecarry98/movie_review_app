@@ -24,6 +24,12 @@ abstract class HomeService {
     @Path('lang?') String? language,
     @Path('apiKey') required String apiKey,
   });
+  @GET('/{lang?}/API/SearchMovie/{apiKey}/{expression}')
+  Future<BaseListData<MovieModel>> getMovieResult({
+    @Path('lang?') String? language,
+    @Path('apiKey') required String apiKey,
+    @Path('expression') required String expression,
+  });
 
   //get now showing : most popular
   //get coming soon: get top 250 movies

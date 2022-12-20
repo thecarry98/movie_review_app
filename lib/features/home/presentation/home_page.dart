@@ -6,6 +6,7 @@ import 'package:movie_review_app/common/widgets/textfields/textfields/index.dart
 import 'package:movie_review_app/features/home/presentation/pages/display_movie.dart';
 
 import '../../../base/base_widget.dart';
+import '../../../common/debounce/debounce.dart';
 import '../../../gen/assets.gen.dart';
 import 'bloc/home_bloc.dart';
 
@@ -19,11 +20,13 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends BaseState<HomePage, HomeEvent, HomeState, HomeBloc>
     with SingleTickerProviderStateMixin {
   late final TabController tabController;
+  late Debouncer _debouncer;
   @override
   void initState() {
     super.initState();
-    bloc.add(HomeEvent.init(0));
-    // bloc.add(HomeEvent.init(1));
+    bloc.add(const HomeEvent.init());
+    bloc.add(const HomeEvent.changeTab(0));
+    _debouncer = Debouncer(milliseconds: 500);
     tabController = TabController(length: 2, vsync: this);
   }
 
@@ -40,7 +43,9 @@ class _HomePageState extends BaseState<HomePage, HomeEvent, HomeState, HomeBloc>
                 )
               : NoBorderTextField(
                   autofocus: true,
-                  onChanged: (text) {},
+                  onChanged: (text) => _debouncer.run(
+                    () => bloc.add(HomeEvent.getMovieResult(text)),
+                  ),
                 ),
         ),
         actions: [
@@ -75,7 +80,9 @@ class _HomePageState extends BaseState<HomePage, HomeEvent, HomeState, HomeBloc>
             child: blocBuilder(
               (c, s) => s.status == BaseStateStatus.loading
                   ? Center(child: CircularProgressIndicator())
-                  : _tabView(),
+                  : DisPlayMovie(
+                      listMovie: s.listMovie,
+                    ),
             ),
           ),
         ],
@@ -85,6 +92,7 @@ class _HomePageState extends BaseState<HomePage, HomeEvent, HomeState, HomeBloc>
 
   Widget _tab() {
     return TabBar(
+      onTap: (i) => bloc.add(HomeEvent.changeTab(i)),
       padding: EdgeInsets.all(5.w),
       labelColor: AppColors.white,
       unselectedLabelColor: AppColors.color0f1b2b,
@@ -109,13 +117,20 @@ class _HomePageState extends BaseState<HomePage, HomeEvent, HomeState, HomeBloc>
     );
   }
 
-  Widget _tabView() {
-    return TabBarView(
-      controller: tabController,
-      children: [
-        DisPlayMovie(index: 0),
-        DisPlayMovie(index: 1),
-      ],
-    );
-  }
+  // Widget _tabView() {
+  //   return TabBarView(
+  //     controller: tabController,
+  //     // onPageChanged: (i) => bloc.add(HomeEvent.callMovie(i)),
+  //     children: [
+  //       DisPlayMovie(
+  //         bloc: bloc,
+  //         index: 0,
+  //       ),
+  //       DisPlayMovie(
+  //         bloc: bloc,
+  //         index: 1,
+  //       ),
+  //     ],
+  //   );
+  // }
 }

@@ -17,6 +17,15 @@ class HomeSourceImpl implements HomeSource {
 
   @override
   Future<BaseListData<MovieModel>> getNowShowing() {
-    return _service.getNowShowing(apiKey: AppToken.apiKey4);
+    return _service.getNowShowing(apiKey: AppToken.apiKey6);
+  }
+
+  @override
+  Future<BaseListData<MovieModel>> getMovieResult(
+      {required String expression}) {
+    return _service.getMovieResult(
+      apiKey: AppToken.apiKey1,
+      expression: expression,
+    );
   }
 }

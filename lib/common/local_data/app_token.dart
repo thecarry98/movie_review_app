@@ -6,6 +6,7 @@ class AppToken {
   static const String apiKey3 = 'k_y568rjvb';
   static const String apiKey4 = 'k_c9xzuq2f';
   static const String apiKey5 = 'k_jfdipnad';
+  static const String apiKey6 = 'k_r83fiwz9';
   static const String language = 'en';
   static const bool detail = false;
   static const String alias = 'alias';

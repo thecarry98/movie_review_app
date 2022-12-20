@@ -19,4 +19,10 @@ class HomeUseCaseImpl implements HomeUseCase {
   Future<Either<BaseError, List<MovieModel>>> getNowShowing() {
     return _repo.getNowShowing();
   }
+
+  @override
+  Future<Either<BaseError, List<MovieModel>>> getMovieResult(
+      {required String expression}) {
+    return _repo.getMovieResult(expression: expression);
+  }
 }
