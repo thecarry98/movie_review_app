@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:movie_review_app/features/home/presentation/widgets/movie_card.dart';
-import 'package:movie_review_app/features/movie_detail/presentation/movie_detail_auth.dart';
+import 'package:movie_review_app/features/movie_detail/presentation/movie_detail.dart';
 import 'package:movie_review_app/routes/app_pages.dart';
 import 'package:movie_review_app/routes/app_routes.dart';
 import '../../data/model/movie_model.dart';
@@ -27,7 +27,7 @@ class _DisPlayMovieState extends State<DisPlayMovie> {
         mainAxisSpacing: 20.h,
         itemBuilder: (c, i) => GestureDetector(
             onTap: () => context.router.push(
-                  MovieDetailAuthRoute(id: widget.listMovie?[i].id ?? ''),
+                  MovieDetailRoute(id: widget.listMovie?[i].id ?? ''),
                 ),
             child: MovieCard(movie: widget.listMovie?[i])),
         itemCount: 10,

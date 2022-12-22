@@ -1,0 +1,4 @@
+enum DetailViewEnum {
+  actors,
+  images,
+}

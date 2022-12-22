@@ -29,13 +29,15 @@ class _$AppPages extends RootStackRouter {
         child: const HomePage(),
       );
     },
-    MovieDetailAuthRoute.name: (routeData) {
-      final args = routeData.argsAs<MovieDetailAuthRouteArgs>();
+    MovieDetailRoute.name: (routeData) {
+      final args = routeData.argsAs<MovieDetailRouteArgs>();
       return MaterialPageX<dynamic>(
         routeData: routeData,
-        child: MovieDetailAuth(
+        child: MovieDetail(
           key: args.key,
           id: args.id,
+          name: args.name,
+          year: args.year,
         ),
       );
     },
@@ -58,7 +60,7 @@ class _$AppPages extends RootStackRouter {
           path: '/home',
         ),
         RouteConfig(
-          MovieDetailAuthRoute.name,
+          MovieDetailRoute.name,
           path: '/movieDetail',
         ),
       ];
@@ -89,35 +91,45 @@ class HomePageRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [MovieDetailAuth]
-class MovieDetailAuthRoute extends PageRouteInfo<MovieDetailAuthRouteArgs> {
-  MovieDetailAuthRoute({
+/// [MovieDetail]
+class MovieDetailRoute extends PageRouteInfo<MovieDetailRouteArgs> {
+  MovieDetailRoute({
     Key? key,
     required String id,
+    String? name,
+    String? year,
   }) : super(
-          MovieDetailAuthRoute.name,
+          MovieDetailRoute.name,
           path: '/movieDetail',
-          args: MovieDetailAuthRouteArgs(
+          args: MovieDetailRouteArgs(
             key: key,
             id: id,
+            name: name,
+            year: year,
           ),
         );
 
-  static const String name = 'MovieDetailAuthRoute';
+  static const String name = 'MovieDetailRoute';
 }
 
-class MovieDetailAuthRouteArgs {
-  const MovieDetailAuthRouteArgs({
+class MovieDetailRouteArgs {
+  const MovieDetailRouteArgs({
     this.key,
     required this.id,
+    this.name,
+    this.year,
   });
 
   final Key? key;
 
   final String id;
 
+  final String? name;
+
+  final String? year;
+
   @override
   String toString() {
-    return 'MovieDetailAuthRouteArgs{key: $key, id: $id}';
+    return 'MovieDetailRouteArgs{key: $key, id: $id, name: $name, year: $year}';
   }
 }

@@ -9,6 +9,8 @@ part of 'movie_detail_bloc.dart';
 abstract class _$MovieDetailStateCWProxy {
   MovieDetailState message(String? message);
 
+  MovieDetailState movieEntity(MovieDetailEntity? movieEntity);
+
   MovieDetailState status(BaseStateStatus status);
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `MovieDetailState(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
@@ -19,6 +21,7 @@ abstract class _$MovieDetailStateCWProxy {
   /// ````
   MovieDetailState call({
     String? message,
+    MovieDetailEntity? movieEntity,
     BaseStateStatus? status,
   });
 }
@@ -33,6 +36,10 @@ class _$MovieDetailStateCWProxyImpl implements _$MovieDetailStateCWProxy {
   MovieDetailState message(String? message) => this(message: message);
 
   @override
+  MovieDetailState movieEntity(MovieDetailEntity? movieEntity) =>
+      this(movieEntity: movieEntity);
+
+  @override
   MovieDetailState status(BaseStateStatus status) => this(status: status);
 
   @override
@@ -45,6 +52,7 @@ class _$MovieDetailStateCWProxyImpl implements _$MovieDetailStateCWProxy {
   /// ````
   MovieDetailState call({
     Object? message = const $CopyWithPlaceholder(),
+    Object? movieEntity = const $CopyWithPlaceholder(),
     Object? status = const $CopyWithPlaceholder(),
   }) {
     return MovieDetailState(
@@ -52,6 +60,10 @@ class _$MovieDetailStateCWProxyImpl implements _$MovieDetailStateCWProxy {
           ? _value.message
           // ignore: cast_nullable_to_non_nullable
           : message as String?,
+      movieEntity: movieEntity == const $CopyWithPlaceholder()
+          ? _value.movieEntity
+          // ignore: cast_nullable_to_non_nullable
+          : movieEntity as MovieDetailEntity?,
       status: status == const $CopyWithPlaceholder() || status == null
           ? _value.status
           // ignore: cast_nullable_to_non_nullable
