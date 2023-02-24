@@ -5,8 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:movie_review_app/features/home/data/model/movie_model.dart';
-import 'package:movie_review_app/features/home/domain/use_case/home_use_case.dart';
-
+import 'package:movie_review_app/features/home/domain/repository/home_repo.dart';
 import '../../../../base/bloc/index.dart';
 
 part 'home_event.dart';
@@ -16,7 +15,7 @@ part 'home_bloc.freezed.dart';
 
 @injectable
 class HomeBloc extends BaseBloc<HomeEvent, HomeState> {
-  HomeBloc(this._useCase) : super(HomeState.init()) {
+  HomeBloc(this._homeRepo) : super(HomeState.init()) {
     on<HomeEvent>((HomeEvent event, Emitter<HomeState> emit) async {
       await event.when(
         init: () => _onInit(emit),
@@ -28,7 +27,7 @@ class HomeBloc extends BaseBloc<HomeEvent, HomeState> {
     });
   }
 
-  final HomeUseCase _useCase;
+  final HomeRepo _homeRepo;
   final PageController pageController = PageController();
   bool isSearching = false;
   _onInit(Emitter<HomeState> emit) async {
@@ -49,7 +48,7 @@ class HomeBloc extends BaseBloc<HomeEvent, HomeState> {
     switch (index) {
       case 0:
         // emit(state.copyWith(status: BaseStateStatus.loading));
-        final res = await _useCase.getNowShowing();
+        final res = await _homeRepo.getNowShowing();
         emit(
           res.fold(
             (l) => state.copyWith(status: BaseStateStatus.failed),
@@ -63,7 +62,7 @@ class HomeBloc extends BaseBloc<HomeEvent, HomeState> {
         break;
       case 1:
         // emit(state.copyWith(status: BaseStateStatus.loading));
-        final res = await _useCase.getComingSoon();
+        final res = await _homeRepo.getComingSoon();
         emit(res.fold(
           (l) => state.copyWith(status: BaseStateStatus.failed),
           (r) => state.copyWith(
@@ -87,7 +86,7 @@ class HomeBloc extends BaseBloc<HomeEvent, HomeState> {
     if (expression.trim().isNotEmpty) {
       emit(state.copyWith(status: BaseStateStatus.loading, listMovie: null));
 
-      final res = await _useCase.getMovieResult(expression: expression);
+      final res = await _homeRepo.getMovieResult(expression: expression);
       emit(res.fold(
         (l) => state.copyWith(status: BaseStateStatus.failed),
         (r) => state.copyWith(

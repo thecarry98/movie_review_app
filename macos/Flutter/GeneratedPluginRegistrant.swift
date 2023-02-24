@@ -8,7 +8,7 @@ import Foundation
 import connectivity_plus
 import flutter_local_notifications
 import path_provider_macos
-import shared_preferences_macos
+import shared_preferences_foundation
 import sqflite
 
 func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {

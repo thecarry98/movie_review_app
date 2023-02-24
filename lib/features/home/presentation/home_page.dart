@@ -6,7 +6,7 @@ import 'package:movie_review_app/common/widgets/textfields/textfields/index.dart
 import 'package:movie_review_app/features/home/presentation/pages/display_movie.dart';
 
 import '../../../base/base_widget.dart';
-import '../../../common/debounce/debounce.dart';
+import '../../../common/utils/functions/debouncer.dart';
 import '../../../gen/assets.gen.dart';
 import 'bloc/home_bloc.dart';
 
@@ -79,7 +79,7 @@ class _HomePageState extends BaseState<HomePage, HomeEvent, HomeState, HomeBloc>
           Expanded(
             child: blocBuilder(
               (c, s) => s.status == BaseStateStatus.loading
-                  ? Center(child: CircularProgressIndicator())
+                  ? const Center(child: CircularProgressIndicator())
                   : DisPlayMovie(
                       listMovie: s.listMovie,
                     ),

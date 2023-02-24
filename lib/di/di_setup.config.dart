@@ -74,7 +74,7 @@ _i1.GetIt $initGetIt(
       () => _i22.MovieDetailRepoImpl(get<_i15.DetailSource>()));
   gh.factory<_i23.MovieDetailUsecase>(
       () => _i24.MovieDetailUsecaseImpl(get<_i21.MovieDetailRepo>()));
-  gh.factory<_i25.HomeBloc>(() => _i25.HomeBloc(get<_i19.HomeUseCase>()));
+  gh.factory<_i25.HomeBloc>(() => _i25.HomeBloc(get<_i17.HomeRepo>()));
   gh.factory<_i26.MovieDetailBloc>(
       () => _i26.MovieDetailBloc(get<_i23.MovieDetailUsecase>()));
   return get;
